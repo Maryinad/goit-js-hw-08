@@ -24,6 +24,7 @@ const showMarkup = galleryContainerEl.insertAdjacentHTML(
 );
 
 console.log(galleryItems);
+console.log(showMarkup);
 
 let gallery = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
