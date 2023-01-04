@@ -1,7 +1,12 @@
 import throttle from 'lodash.throttle';
 
 const formEl = document.querySelector('.feedback-form');
-const userInfo = {};
+let userInfo = {};
+
+if (localStorage.getItem('feedback-form-state')) {
+  userInfo = JSON.parse(localStorage.getItem('feedback-form-state'));
+  console.log(userInfo);
+}
 
 function fillContactFormField() {
   try {
@@ -12,11 +17,11 @@ function fillContactFormField() {
     if (userInfoForm === null) {
       return;
     }
-    console.log(formEl.elements);
-    console.log(userInfoForm);
+    // console.log(formEl.elements);
+    // console.log(userInfoForm);
 
     for (const el in userInfoForm) {
-      console.log(el);
+      //   console.log(el);
 
       formEl.elements[el].value = userInfoForm[el];
     }
